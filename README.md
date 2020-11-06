@@ -57,10 +57,10 @@ Array $payConfig 配置参数：
 |spbill_create_ip|string|否|商户平台设置的IP白名单，如果不传值，自动获取服务器ip  |
 |cert_pem|string|是|商户支付证书(apiclient_cert.pem)，绝对路径|
 |key_pem|string|是|支付证书私钥（apiclient_key.pem），绝对路径|
-|send_name|是|string|红包发送者名称(不能超过10个汉字)|
-|wishing|是|string|红包祝福语(不能超过42个汉字)|
-|act_name|是|string|活动名称(不能超过10个汉字)|
-|send_name|是|string|红包发送者名称(不能超过10个汉字)|
+|send_name|string|是|红包发送者名称(不能超过10个汉字)|
+|wishing|string|是|红包祝福语(不能超过42个汉字)|
+|act_name|string|是|活动名称(不能超过10个汉字)|
+|send_name|string|是|红包发送者名称(不能超过10个汉字)|
 
 Array $data 参数：
 
