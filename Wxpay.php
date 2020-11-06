@@ -91,15 +91,13 @@ class Payment
             exit;
         }
         $rdata = array(
-            'mch_appid' => strval($content->appid),
-            'mchid' => strval($content->mchid),
-            'device_info' => strval($content->device_info),
-            'nonce_str' => strval($content->nonce_str),
+            'wxappid' => strval($content->wxappid),
+            'mch_id' => strval($content->mch_id),
+            'send_listid' => strval($content->send_listid),
             'result_code' => strval($content->result_code),
-            'partner_trade_no' => strval($content->partner_trade_no),
-            'payment_no' => strval($content->payment_no),
-            'payment_time' => strval($content->payment_time),
+            'mch_billno' => strval($content->mch_billno),
             'return_code' => strval($content->return_code),
+            're_openid' => strval($content->re_openid),
         );
         return $rdata;
     }
