@@ -12,7 +12,7 @@
         require_once(MODULE_ROOT.'/Wxpay.php');
     ?>
 ```
-###企业付款到零钱：
+### 企业付款到零钱：
 ```
     <?php
         $pay=new Wxpay\Payment($payConfig);
@@ -39,7 +39,7 @@ Array $data 参数：
 |money|float|是|付款金额(如0.5元)|
 |desc|string|否|付款备注信息|
 
-###微信现金红包
+### 微信现金红包
 ```
 <?php
 		$pay=new Wxpay\Payment($payConfig);
