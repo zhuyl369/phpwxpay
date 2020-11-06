@@ -10,7 +10,7 @@
 ```
     <?php
         require_once(MODULE_ROOT.'/Wxpay.php');
-		$pay=new Wxpay\Payment($payConfig);
+        $pay=new Wxpay\Payment($payConfig);
     ?>
 ```
 
