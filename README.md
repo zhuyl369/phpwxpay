@@ -40,8 +40,9 @@
 |desc		|string	|否		|付款备注信息			|
 
 > Array  企业付款到零钱成功返回信息
-| 参数				| 类型	|必填	| 示例值							| 描述													|
-| --------			| -----:|-----:	| -----:							| :----:												|
+
+|参数				|类型	|必填	|示例值								|描述													|
+|--					|--		|--		|--									|--														|
 |mch_appid			|string	|是		|wx8888888888888888					|商户appid												|
 |mchid				|string	|是		|1234567890							|商户号													|
 |device_info		|string	|是		|013467007045764					|微信支付分配的终端设备号								|
@@ -51,7 +52,6 @@
 |payment_no			|string	|是		|1007752501201407033233368018		|企业付款成功，返回的微信付款单号						|
 |payment_time		|string	|是		|2015-05-19 15：26：59				|企业付款成功时间										|
 |return_code		|string	|是		|SUCCESS							|返回状态码SUCCESS/FAIL（此字段是通信标识，非交易标识）	|
-
 
 ### 微信现金红包
 ```
@@ -74,7 +74,9 @@
 
 > Array  微信现金红包成功返回信息
 
-| 参数		| 类型	|必填	| 示例值							| 描述													|
+
+|参数		|类型	|必填	|示例值								|描述													|
+|--			|--		|--		|--									|--														|
 |wxappid	|string	|是		|wx8888888888888888					|商户appid												|
 |mch_id		|string	|是		|1234567890							|商户号													|
 |send_listid|string	|是		|100000000020150520314766074200		|红包订单的微信单号										|
@@ -83,3 +85,4 @@
 |mch_billno	|string	|是		|10000098201411111234567890			|商户订单号												|
 |re_openid	|string	|是		|oxTWIuGaIt6gTKsQRLau2M0yL16E		|接受收红包的用户在wxappid下的openid					|
 |return_code|string	|是		|SUCCESS							|返回状态码SUCCESS/FAIL（此字段是通信标识，非交易标识）	|
+
