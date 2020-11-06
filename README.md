@@ -43,7 +43,7 @@ Array $data 参数：
 ```
 <?php
 		$pay=new Wxpay\Payment($payConfig);
-        $payRes=$pay->sendRedPack($data);
+		$payRes=$pay->sendRedPack($data);
 ?>
 ```
 Array $payConfig 配置参数：
