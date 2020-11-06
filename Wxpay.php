@@ -1,6 +1,6 @@
 <?php
 /* 	php微信支付企业付款、发送现金红包封装类，可适用于 微擎(we7)，thinkphp,原生php应用等框架
-*	auth 	: zhuyl
+*	author 	: zhuyl
 *	github 	: https://github.com/ZhuYL369/Wxpay
 */
 namespace Wxpay;
