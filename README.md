@@ -36,7 +36,7 @@
 | 参数		| 类型	|必填	|  描述					|
 | --------	| -----:|-----:	| :----:				|
 |openid		|string	|是		|要给付款的用户openid	|
-|money		|float	|是		|付款金额(如0.5元)		|
+|amount		|float	|是		|付款金额(如0.5元)		|
 |desc		|string	|否		|付款备注信息			|
 
 > Array  企业付款到零钱成功返回信息
@@ -65,7 +65,7 @@
 | 参数		| 类型	|必填	|  描述								|
 | --------	| -----:|-----:	| :----:							|
 |openid		|string	|是		|接收红包用户的openid				|
-|money		|float	|是		|红包金额(如0.3元)					|
+|amount		|float	|是		|红包金额(如0.3元)					|
 |send_name	|string	|是		|红包发送者名称(不能超过10个汉字)	|
 |wishing	|string	|是		|红包祝福语(不能超过42个汉字)		|
 |act_name	|string	|是		|活动名称(不能超过10个汉字)			|
