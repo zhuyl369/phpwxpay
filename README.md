@@ -41,10 +41,10 @@ Array $data 参数：
 
 ### 微信现金红包
 ```
-<?php
+	<?php
 		$pay=new Wxpay\Payment($payConfig);
 		$payRes=$pay->sendRedPack($data);
-?>
+	?>
 ```
 Array $payConfig 配置参数：
 
