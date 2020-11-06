@@ -73,6 +73,7 @@
 |desc		|string	|否		|红包备注信息						|
 
 > Array  微信现金红包成功返回信息
+
 | 参数		| 类型	|必填	| 示例值							| 描述													|
 |wxappid	|string	|是		|wx8888888888888888					|商户appid												|
 |mch_id		|string	|是		|1234567890							|商户号													|
