@@ -6,7 +6,14 @@
 
 #### 使用说明
 
-引入类
+Composer安装
+
+```
+	composer require phpwxpay/payment
+	
+```
+
+不使用Composer
 ```
     <?php
         require_once(MODULE_ROOT.'/Phpwxpay.php');
