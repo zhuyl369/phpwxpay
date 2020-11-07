@@ -1,5 +1,5 @@
 {
-    "name": "Wxpay/Payment",
+    "name": "phpwxpay/payment",
     "description": "A tool that encapsulates WeChat's Enterprise payment and sending cash red envelopes",
 	"version":"1.0.0",
 	"keywords": ["wechat", "payment", "red pack", "Enterprise payment", "red envelopes"],
@@ -16,7 +16,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "Wxpay\\": "src/"
+            "Phpwxpay\\": "src/"
         }
     }
 }
