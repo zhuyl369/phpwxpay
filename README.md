@@ -9,8 +9,8 @@
 引入类
 ```
     <?php
-        require_once(MODULE_ROOT.'/Wxpay.php');
-        $pay=new Wxpay\Payment($payConfig);
+        require_once(MODULE_ROOT.'/Phpwxpay.php');
+        $pay=new Phpwxpay\Payment($payConfig);
     ?>
 ```
 
