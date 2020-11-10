@@ -3,7 +3,7 @@
 *	author 	: zhuyl
 *	github 	: https://github.com/ZhuYL369/Wxpay
 */
-namespace PhpWxpay\Payment;
+namespace PhpWxpay;
 
 class Payment
 {
