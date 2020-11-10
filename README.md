@@ -10,7 +10,6 @@ Composer安装
 
 ```
 	composer require phpwxpay/payment
-	
 ```
 
 不使用Composer
