@@ -9,7 +9,7 @@
 Composer安装
 
 ```
-	composer require phpwxpay/payment
+	composer require phpwxpay/payment @dev
 ```
 
 不使用Composer
