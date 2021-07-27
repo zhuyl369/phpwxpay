@@ -1,7 +1,7 @@
 # php微信支付企业付款、发送现金红包封装类，可适用于 微擎(we7)，thinkphp,原生php应用等框架
 
 
-***在做一个微擎项目时发现微擎没有封装好的企业付款到零钱和发送现金红包等方法函数，于是自己动手封装了一个。***
+在做一个微擎项目时发现微擎没有封装好的企业付款到零钱和发送现金红包等方法函数，于是自己动手封装了一个。
 
 
 ## Composer安装
@@ -36,12 +36,14 @@ $ git clone git@github.com:zhuyl369/phpwxpay.git
 
 | 参数				| 类型	|必填	|  描述													|
 | --------			| -----:|-----:	| :----:												|
-|appid				|string	|是		|应用appid (商户号绑定的appid)							|
+|appid				|string	|是		|应用appid (商户号绑定的appid)							    |
 |mchid				|string	|是		|微信支付商户号											|
-|apikey				|string	|是		|商户支付密钥											|
-|spbill_create_ip	|string	|否		|商户平台设置的IP白名单，如果不传值，自动获取服务器ip	|
-|cert_pem			|string	|是		|商户支付证书(apiclient_cert.pem)，绝对路径				|
-|key_pem			|string	|是		|支付证书私钥（apiclient_key.pem），绝对路径			|
+|apikey				|string	|是		|商户支付密钥											    |
+|spbill_create_ip	|string	|否		|商户平台设置的IP白名单，如果不传值，自动获取服务器ip	            |
+|cert_pem			|string	|是		|商户支付证书(apiclient_cert.pem)，绝对路径				    |
+|key_pem			|string	|是		|支付证书私钥（apiclient_key.pem），绝对路径			        |  
+
+
 *示例代码*
 ```php
 <?php
@@ -100,13 +102,13 @@ try{
 
 | 参数		| 类型	|必填	|  描述								|
 | --------	| -----:|-----:	| :----:							|
-|openid		|string	|是		|接收红包用户的openid				|
+|openid		|string	|是		|接收红包用户的openid				    |
 |amount		|float	|是		|红包金额(如0.3元)					|
-|send_name	|string	|是		|红包发送者名称(不能超过10个汉字)	|
-|wishing	|string	|是		|红包祝福语(不能超过42个汉字)		|
-|act_name	|string	|是		|活动名称(不能超过10个汉字)			|
-|send_name	|string	|是		|红包发送者名称(不能超过10个汉字)	|
-|desc		|string	|否		|红包备注信息						|
+|send_name	|string	|是		|红包发送者名称(不能超过10个汉字)	        |
+|wishing	|string	|是		|红包祝福语(不能超过42个汉字)		    |
+|act_name	|string	|是		|活动名称(不能超过10个汉字)			    |
+|send_name	|string	|是		|红包发送者名称(不能超过10个汉字)	        |
+|desc		|string	|否		|红包备注信息						    |
 
 > 微信现金红包成功返回信息(Array)
 
