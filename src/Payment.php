@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * php微信支付企业付款、发送现金红包封装类，可适用于 微擎(we7)，thinkphp,原生php应用等框架
  * @author zhuyl369
@@ -6,6 +7,14 @@
  */
 namespace phpwxpay;
 use Exception;
+=======
+/* 	php微信支付企业付款、发送现金红包封装类，可适用于 微擎(we7)，thinkphp,原生php应用等框架
+*	author 	: zhuyl
+*	github 	: https://github.com/ZhuYL369/Wxpay
+*/
+namespace PhpWxpay;
+
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
 class Payment
 {
 
@@ -27,6 +36,7 @@ class Payment
     private   $url = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/promotion/transfers';
     private   $sendredpackurl = 'https://api.mch.weixin.qq.com/mmpaymkttransfers/sendredpack';
 
+<<<<<<< HEAD
     /**
      * 实例化对象
      * @access public
@@ -52,13 +62,39 @@ class Payment
     {
 		$this->openid 					= isset($data['openid']) ? $data['openid'] : $this->exception('openid 参数不能为空');
         $this->amount 					= isset($data['amount']) ? $data['amount'] : $this->exception('amount 参数不能为空');
+=======
+    public function __construct($config)
+    {
+        $this->appid                	= isset($config['appid']) ? $config['appid'] : die('appid 不能为空');
+        $this->mchid                    = isset($config['mchid']) ? $config['mchid'] : die('mchid 不能为空');
+        $this->apikey                   = isset($config['apikey']) ? $config['apikey'] : die('apikey 不能为空');
+        $this->spbill_create_ip         = isset($config['spbill_create_ip']) ? $config['spbill_create_ip'] : $this->getips();
+        $this->partner_trade_no         = isset($config['partner_trade_no']) ? $config['partner_trade_no'] : date('Ymd') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+        $this->re_user_name             = isset($config['re_user_name']) ? $config['re_user_name'] : '';
+
+        $this->cert_pem                 = isset($config['cert_pem']) ? $config['cert_pem'] : die('cert_pem支付证书路径不能为空');
+        $this->key_pem                  = isset($config['key_pem']) ? $config['key_pem'] : die('cert_pem支付证书密钥路径不能为空');
+
+    }
+	/* 
+	 *		企业付款到用户零钱
+	*/
+    public function toBalance($data)
+    {
+		$this->openid 					= isset($data['openid']) ? $data['openid'] : die('openid 参数不能为空');
+        $this->amount 					= isset($data['amount']) ? $data['amount'] : die('amount 参数不能为空');
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
 		$this->desc  					= isset($data['desc']) ? $data['desc'] : '';
 
         $resp = $this->curl_post_ssl($this->url, $this->signToXml());
 
         $content = simplexml_load_string($resp, 'SimpleXMLElement', LIBXML_NOCDATA);
         if (strval($content->return_code) == 'FAIL') {
+<<<<<<< HEAD
             $this->exception($content->return_msg);
+=======
+            die($content->return_msg);
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
         }
         if (strval($content->result_code) == 'FAIL') {
             print_r(array('err_code' => strval($content->err_code), 'err_code_des' => strval($content->err_code_des)));
@@ -77,6 +113,7 @@ class Payment
         );
         return $rdata;
     }
+<<<<<<< HEAD
     /**
      *	发送现金红包
      *  @access public
@@ -89,16 +126,36 @@ class Payment
 		$this->send_name                = isset($data['send_name']) ? $data['send_name'] : $this->exception('send_name 参数不能为空');
         $this->wishing                  = isset($data['wishing']) ? $data['wishing'] : $this->exception('wishing 参数不能为空');
         $this->act_name                 = isset($data['act_name']) ? $data['act_name'] : $this->exception('act_name 参数不能为空');
+=======
+	/* 
+	 *		发送现金红包
+	*/
+    public function sendRedPack($data)
+    {
+        $this->openid 					= isset($data['openid']) ? $data['openid'] : die('openid 参数不能为空');
+        $this->amount 					= isset($data['amount']) ? $data['amount'] : die('amount 参数不能为空');
+		$this->send_name                = isset($data['send_name']) ? $data['send_name'] : die('send_name 参数不能为空');
+        $this->wishing                  = isset($data['wishing']) ? $data['wishing'] : die('wishing 参数不能为空');
+        $this->act_name                 = isset($data['act_name']) ? $data['act_name'] : die('act_name 参数不能为空');
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
 		$this->desc  					= isset($data['desc']) ? $data['desc'] : '';
 		
         $resp = $this->curl_post_ssl($this->sendredpackurl, $this->signToXmlForRedPack());
         $content = simplexml_load_string($resp, 'SimpleXMLElement', LIBXML_NOCDATA);
 
         if ($content->return_code != 'SUCCESS') {
+<<<<<<< HEAD
             throw new Exception($content->return_msg);
         }
         if ($content->result_code != 'SUCCESS') {
             throw new Exception($content->err_code_des);
+=======
+            die($content->return_msg);
+        }
+        if ($content->result_code != 'SUCCESS') {
+            print_r(array('err_code' => strval($content->err_code), 'err_code_des' => strval($content->err_code_des)));
+            exit;
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
         }
         $rdata = array(
             'wxappid' => strval($content->wxappid),
@@ -135,8 +192,13 @@ class Payment
             return $data;
         } else {
             $error = curl_errno($ch);
+<<<<<<< HEAD
             curl_close($ch);
             throw new Exception("call faild, errorCode:$error\n");
+=======
+            echo "call faild, errorCode:$error\n";
+            curl_close($ch);
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
             return false;
         }
     }
@@ -166,7 +228,11 @@ class Payment
         $string1 .= "key={$this->apikey}";
         $pars['sign'] = strtoupper(md5($string1));
         $wget = $this->ArrToXml($pars);
+<<<<<<< HEAD
         //file_put_contents(MODULE_ROOT . '/DEBUG.TXT', var_export($wget, true));
+=======
+        file_put_contents(MODULE_ROOT . '/DEBUG.TXT', var_export($wget, true));
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
         return $wget;
     }
 
@@ -225,6 +291,7 @@ class Payment
         }
         return $ip;
     }
+<<<<<<< HEAD
 
     private function exception($msg){
         throw new Exception($msg);
@@ -236,4 +303,8 @@ class Payment
 
 }
 set_exception_handler(array("phpwxpay\Payment","showException"));
+=======
+}
+
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
 ?>

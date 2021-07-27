@@ -1,6 +1,7 @@
 {
     "name": "phpwxpay/payment",
     "description": "A tool that encapsulates WeChat's Enterprise payment and sending cash red envelopes",
+<<<<<<< HEAD
     "authors": [
         {
             "name": "zhuyl369",
@@ -9,13 +10,31 @@
             "role": "Developer"
         }
     ],
+=======
+	"keywords": ["wechat", "payment", "red pack", "Enterprise payment", "red envelopes"],
+	"authors":[
+		{
+			"name": "youlin zhu",
+            "email": "zhuyl369@qq.com",
+            "homepage": "https://www.blesslin.com",
+            "role": "Developer"
+		}
+	],
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
 	"license": "MIT",
     "require": {
         "php": ">=5.3"
     },
 	"autoload": {
         "psr-4": {
+<<<<<<< HEAD
             "phpwxpay\\": "src/"
         }
     }
 }
+=======
+            "PhpWxpay\\": "src/"
+        }
+    }
+}
+>>>>>>> 7a47ca41f1da0f4d41145a7f6013223e19cce56c
