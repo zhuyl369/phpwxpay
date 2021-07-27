@@ -92,7 +92,7 @@ try{
 ### 微信现金红包
 ```php
 <?php
-    $payRes=$pay->sendRedPack($data);
+    $payRes=$pay->toRedpack($data);
 ?>
 ```
 
